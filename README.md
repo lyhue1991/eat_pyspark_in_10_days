@@ -1,10 +1,20 @@
 # 如何用10天吃掉pyspark？🔥🔥
 
+<!-- #region -->
+**《10天吃掉那只pyspark》**
+* 🚀 github项目地址: https://github.com/lyhue1991/eat_pyspark_in_10_days
+* 🐳 和鲸专栏地址: https://www.kesci.com/home/column/5fe6aa955e24ed00302304e0 【代码可直接fork后云端运行，无需配置环境】
 
-《10天吃掉那只pyspark》
 
-🚀 github项目地址: https://github.com/lyhue1991/eat_pyspark_in_10_days
+**《20天吃掉那只Pytorch》**
+* 🚀 github项目地址: https://github.com/lyhue1991/eat_pytorch_in_20_days
+* 🐳 和鲸专栏地址: https://www.kesci.com/home/column/5f2ac5d8af3980002cb1bc08 【代码可直接fork后云端运行，无需配置环境】
 
+
+**《30天吃掉那只TensorFlow2》**
+* 🚀 github项目地址: https://github.com/lyhue1991/eat_tensorflow2_in_30_days
+* 🐳 和鲸专栏地址: https://www.kesci.com/home/column/5d8ef3c3037db3002d3aa3a0 【代码可直接fork后云端运行，无需配置环境】
+<!-- #endregion -->
 
 ### 一，pyspark 🍎  or spark-scala 🔥 ?
 

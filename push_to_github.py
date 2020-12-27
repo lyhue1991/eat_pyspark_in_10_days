@@ -17,7 +17,7 @@
 
 # !git rm --cached  .ipynb_checkpoints/* 
 
-# !git commit -m"revise logo"
+# !git commit -m"revise some chapters"
 
 # !git remote add origin https://github.com/lyhue1991/eat_pyspark_in_10_days
 
