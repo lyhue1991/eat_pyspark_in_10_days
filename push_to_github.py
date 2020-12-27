@@ -17,13 +17,13 @@
 
 # !git rm --cached  .ipynb_checkpoints/* 
 
-# !git commit -m"add some chapters"
+# !git commit -m"revise logo"
 
 # !git remote add origin https://github.com/lyhue1991/eat_pyspark_in_10_days
 
 # !git pull origin master 
 
-# !git push -f origin master 
+# !git push origin master 
 
 # !git remote rm gitee 
 
