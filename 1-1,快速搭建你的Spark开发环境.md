@@ -230,4 +230,4 @@ pyspark_demo.py
 
 也可以在公众号后台回复关键字：**spark加群**，加入spark和大数据读者交流群和大家讨论。
 
-![image.png](./data/Python与算法之美.png)
+![image.png](./data/算法美食屋二维码.jpg)
