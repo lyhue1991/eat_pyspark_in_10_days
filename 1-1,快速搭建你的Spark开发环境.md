@@ -41,16 +41,6 @@ spark官网下载: http://spark.apache.org/downloads.html
 
 
 
-```python
-!ls /Users/liangyun/ProgramFiles/spark-3.0.1-bin-hadoop3.2
-```
-
-```
-LICENSE    README.md  conf       jars       python
-NOTICE     RELEASE    data       kubernetes sbin
-R          bin        examples   licenses   yarn
-```
-
 <!-- #region -->
 对于Linux用户，和mac用户，建议像如下方式在~/.bashrc中设置环境变量，以便可以启动spark-submit和spark-shell。
 
@@ -112,15 +102,19 @@ hello spark
 
 ```
 
+<!-- #region -->
 **4，救命方案**
 
 如果以上过程由于java环境配置等因素没能成功安装pyspark。
 
-可以在kesci的云端notebook环境中直接学习pyspark。
+可以在和鲸社区的云端notebook环境中直接学习pyspark。
 
-kesci的云端notebook环境中已经安装好了pyspark。
+和鲸社区的云端notebook环境中已经安装好了pyspark。
 
-https://www.kesci.com/home/project
+
+https://www.kesci.com/home/column/5fe6aa955e24ed00302304e0
+
+<!-- #endregion -->
 
 ```python
 
