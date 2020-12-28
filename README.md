@@ -115,8 +115,8 @@ pyspark学习曲线平缓，spark-scala学习曲线陡峭。
 |day1 | [1-1,快速搭建你的Spark开发环境](./1-1,快速搭建你的Spark开发环境.md)    | ⭐️⭐️|   1hour    |✅    |
 |day2 | [1-2,1小时看懂Spark的基本原理](./1-2,1小时看懂Spark的基本原理.md)    | ⭐️⭐️⭐️ |   1hour    | ✅   |
 |&nbsp; |**二、核心篇** | &nbsp; |  &nbsp; | &nbsp; |
-|day3 |  [2-1,2小时入门Spark之RDD编程](./2-1,2小时入门Spark之RDD编程.md)  | ⭐️⭐️⭐️ |   2hour    |   |
-|day4 |  [2-2,7道RDD编程练习题](./2-2,7道RDD编程练习题.md)  | ⭐️⭐️⭐️  |   1hour    | |
+|day3 |  [2-1,2小时入门Spark之RDD编程](./2-1,2小时入门Spark之RDD编程.md)  | ⭐️⭐️⭐️ |   2hour    | ✅   |
+|day4 |  [2-2,7道RDD编程练习题](./2-2,7道RDD编程练习题.md)  | ⭐️⭐️⭐️  |   1hour    | ✅ |
 |day5 |  [2-3,2小时入门SparkSQL编程](./2-3,2小时入门SparkSQL编程.md)  | ⭐️⭐️⭐️  |   2hour    |   |
 |day6 |  [2-4,7道SparkSQL编程练习题](./2-4,7道SparkSQL编程练习题.md)  | ⭐️⭐️⭐️   |   1hour    |   |
 |&nbsp; |**三、进阶篇** |   &nbsp; |  &nbsp;   |&nbsp; |
