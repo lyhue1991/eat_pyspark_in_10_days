@@ -335,7 +335,7 @@ df.show()
 
 ```
 
-### 四，DataFrame保存成文件
+### 三，DataFrame保存成文件
 
 
 可以保存成csv文件，json文件，parquet文件或者保存成hive数据表
@@ -372,7 +372,7 @@ df.write.bucketBy(42, "name").sortBy("age").saveAsTable("people_bucketed")
 
 ```
 
-### 五，DataFrame的API交互
+### 四，DataFrame的API交互
 
 ```python
 from pyspark.sql import Row
@@ -1377,7 +1377,7 @@ dforder.show()
 
 ```
 
-### 六，DataFrame的SQL交互
+### 五，DataFrame的SQL交互
 
 
 将DataFrame注册为临时表视图或者全局表视图后，可以使用sql语句对DataFrame进行交互。
