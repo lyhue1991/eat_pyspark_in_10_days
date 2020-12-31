@@ -120,11 +120,11 @@ pyspark学习曲线平缓，spark-scala学习曲线陡峭。
 |day5 |  [2-3,2小时入门SparkSQL编程](./2-3,2小时入门SparkSQL编程.md)  | ⭐️⭐️⭐️  |   2hour    | ✅   |
 |day6 |  [2-4,7道SparkSQL编程练习题](./2-4,7道SparkSQL编程练习题.md)  | ⭐️⭐️⭐️   |   1hour    |  ✅  |
 |&nbsp; |**三、进阶篇** |   &nbsp; |  &nbsp;   |&nbsp; |
-|day7 |  [3-1,Spark性能调优方法](./3-1,Spark性能调优方法.md)   | ⭐️⭐️⭐️⭐️⭐️ |   2hour    |  |
-|day8 |  [3-2,RDD和SparkSQL综合应用](./3-2,RDD和SparkSQL综合应用.md)   | ⭐️⭐️⭐️⭐️⭐️  |  2hour    | |
+|day7 |  [3-1,Spark性能调优方法](./3-1,Spark性能调优方法.md)   | ⭐️⭐️⭐️⭐️⭐️ |   2hour    | ✅  |
+|day8 |  [3-2,RDD和SparkSQL综合应用](./3-2,RDD和SparkSQL综合应用.md)   | ⭐️⭐️⭐️⭐️⭐️  |  2hour    |✅  |
 |&nbsp;| **四、拓展篇**| &nbsp; |  &nbsp;| &nbsp;|
-|day9| [4-1,探索MLlib机器学习](./4-1,探索MLlib机器学习.md)  |⭐️⭐️⭐️⭐️   | 2hour|  |
-|day10|  [4-2,初识StructuredStreaming](./4-2,初识StructuredStreaming.md)   | ⭐️⭐️⭐️   |   1hour    ||
+|day9| [4-1,探索MLlib机器学习](./4-1,探索MLlib机器学习.md)  |⭐️⭐️⭐️⭐️   | 2hour| ✅  |
+|day10|  [4-2,初识StructuredStreaming](./4-2,初识StructuredStreaming.md)   | ⭐️⭐️⭐️   |   1hour    |✅ |
 <!-- #endregion -->
 
 <!-- #region -->
