@@ -234,7 +234,7 @@ rdd.saveAsTextFile(text_file)
 
 ```python
 #重新读入会被解析文本
-rdd_loaded = sc.textFile(file)
+rdd_loaded = sc.textFile(text_file)
 rdd_loaded.collect()
 ```
 
@@ -759,7 +759,7 @@ total.value
 ```python
 # 计算数据的平均值
 rdd = sc.parallelize([1.1,2.1,3.1,4.1])
-total = sc.accumulator(0.1)
+total = sc.accumulator(0)
 count = sc.accumulator(0)
 
 def func(x):
@@ -772,7 +772,7 @@ total.value/count.value
 ```
 
 ```
-2.625
+2.6
 ```
 
 ```python
