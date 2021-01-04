@@ -124,7 +124,7 @@ pyspark学习曲线平缓，spark-scala学习曲线陡峭。
 |day8 |  [3-2,RDD和SparkSQL综合应用](./3-2,RDD和SparkSQL综合应用.md)   | ⭐️⭐️⭐️⭐️⭐️  |  2hour    |✅  |
 |&nbsp;| **四、拓展篇**| &nbsp; |  &nbsp;| &nbsp;|
 |day9| [4-1,探索MLlib机器学习](./4-1,探索MLlib机器学习.md)  |⭐️⭐️⭐️⭐️   | 2hour| ✅  |
-|day10|  [4-2,初识StructuredStreaming](./4-2,初识StructuredStreaming.md)   | ⭐️⭐️⭐️   |   1hour    |✅ |
+|day10|  [4-2,初识StructuredStreaming](./4-2,初识StructuredStreaming.md)   | ⭐️⭐️⭐️⭐️  |   2hour    |✅ |
 <!-- #endregion -->
 
 <!-- #region -->
