@@ -18,6 +18,7 @@
 **极速通道** 
 * 🚀 公众号 “**算法美食屋**” 后台回复暗号："**吃货来了**"
 * 😋 获取以上3套教程的jupyter notebook 源码文件以及全部数据集的百度云盘下载链接。
+* https://mp.weixin.qq.com/s/ymLtH5BqlWAkpOmCLQOYxw
 
 ![image.png](./data/算法美食屋二维码.jpg)
 
