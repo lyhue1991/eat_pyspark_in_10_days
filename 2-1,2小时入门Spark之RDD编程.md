@@ -657,7 +657,6 @@ x.foldByKey(1,lambda x,y:x*y).collect()
 
 ### 五，缓存操作
 
-<!-- #region -->
 如果一个rdd被多个任务用作中间量，那么对其进行cache缓存到内存中对加快计算会非常有帮助。
 
 声明对一个rdd进行cache后，该rdd不会被立即缓存，而是等到它第一次被计算出来时才进行缓存。
@@ -666,12 +665,15 @@ x.foldByKey(1,lambda x,y:x*y).collect()
 
 如果一个RDD后面不再用到，可以用unpersist释放缓存，unpersist是立即执行的。
 
-
 缓存数据不会切断血缘依赖关系，这是因为缓存数据某些分区所在的节点有可能会有故障，例如内存溢出或者节点损坏。
 
 这时候可以根据血缘关系重新计算这个分区的数据。
 
-<!-- #endregion -->
+如果要切断血缘关系，可以用checkpoint设置检查点将某个rdd保存到磁盘中。
+
+声明对一个rdd进行checkpoint后，该rdd不会被立即保存到磁盘，而是等到它第一次被计算出来时才保存成检查点。
+
+通常只对一些计算代价非常高昂的中间结果或者重复计算结果不可保证完全一致的情形下(如zipWithIndex算子)使用。
 
 ```python
 
@@ -706,7 +708,19 @@ print(mean_a)
 ```
 
 ```python
+#checkpoint 将数据设置成检查点，写入到磁盘中。
+sc.setCheckpointDir("./data/checkpoint/")
+rdd_students = sc.parallelize(["LiLei","Hanmeimei","LiLy","Ann"],2)
 
+rdd_students_idx = rdd_students.zipWithIndex() 
+
+#设置检查点后，可以避免重复计算，不会因为zipWithIndex重复计算触发不一致的问题
+rdd_students_idx.checkpoint() 
+rdd_students_idx.take(3)
+
+```
+
+```python
 ```
 
 ### 六，共享变量
