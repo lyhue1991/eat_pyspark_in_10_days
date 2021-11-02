@@ -133,7 +133,7 @@ Spark任务启动后，可以在浏览器中输入 http://localhost:4040/ 进入
 Jobs：
 每一个Action操作对应一个Job，以Job粒度显示Application进度。有时间轴Timeline。
 
-![](./data/Spark-UI-jobs.png)
+![](./data/Spark-UI-Jobs.png)
 
 <br>
 <br>
@@ -164,7 +164,7 @@ Environment:
 **Excutors** : 
 监控各个Excutors的存储和shuffle情况。
 
-![](./data/Spark-UI-executors页面.png)
+![](./data/Spark-UI-Executors页面.png)
 
 SQL: 
 显示各种SQL命令在那些Jobs中被执行。
