@@ -1374,8 +1374,59 @@ dforder.show()
 ```
 
 ```python
+#爆炸函数
+
+import pyspark.sql.functions as F 
+students = [("LiLei","Swim|Sing|FootBall"),("Ann","Sing|Dance"),("LiLy","Reading|Sing|Dance")]
+dfstudents = spark.createDataFrame(students,["name","hobbies"])
+
+dfstudents.show()
+dfstudents.createOrReplaceTempView("students")
+
+#explode一行转多行,通常搭配LATERAL VIEW使用
+dfhobby = spark.sql("select name,hobby from students LATERAL VIEW explode(split(hobbies,'\\\\|')) tmp as hobby") #注意特殊字符作为分隔符要加四个斜杠
+dfhobby.show() 
+
+#统计每种hobby有多少同学喜欢
+dfcount = dfhobby.groupBy("hobby").agg(F.expr("count(name) as cnt"))
+dfcount.show() 
 
 ```
+
+```
++-----+------------------+
+| name|           hobbies|
++-----+------------------+
+|LiLei|Swim|Sing|FootBall|
+|  Ann|        Sing|Dance|
+| LiLy|Reading|Sing|Dance|
++-----+------------------+
+
++-----+--------+
+| name|   hobby|
++-----+--------+
+|LiLei|    Swim|
+|LiLei|    Sing|
+|LiLei|FootBall|
+|  Ann|    Sing|
+|  Ann|   Dance|
+| LiLy| Reading|
+| LiLy|    Sing|
+| LiLy|   Dance|
++-----+--------+
+
++--------+---+
+|   hobby|cnt|
++--------+---+
+|    Swim|  1|
+|FootBall|  1|
+|    Sing|  3|
+| Reading|  1|
+|   Dance|  2|
++--------+---+
+
+```
+
 
 ### 五，DataFrame的SQL交互
 
