@@ -1427,9 +1427,103 @@ dfcount.show()
 
 ```
 
+```python
+#复合数据类型
+
+#(集合类型)
+import pyspark.sql.functions as F 
+students = [("LiLei",89,76,65),("HanMeiMei",97,98,89),("Lucy",66,55,70)]
+
+dfstudents = spark.createDataFrame(students,["name","math","physics","music"])
+dfstudents.show() 
+
+#array类型
+print("array类型")
+dfarray = dfstudents.selectExpr("name","array(math,physics,music) as score")
+dfarray.show() 
+dfarray.selectExpr("name","score[0] as math").show()
+
+
+#struct类型
+
+print("struct类型")
+dfstruct = dfstudents.selectExpr("name","struct('math',math,'physics',physics,'music',music) as score")
+dfstruct.show() 
+dfstruct.selectExpr("name","score.physics").show()
+
+
+#map类型
+print("map类型")
+dfmap = dfstudents.selectExpr("name","map('math',math,'physics',physics,'music',music) as score")
+dfmap.show() 
+dfmap.selectExpr("name","score['math'] as math").show()
+
+```
+
+```
++---------+----+-------+-----+
+|     name|math|physics|music|
++---------+----+-------+-----+
+|    LiLei|  89|     76|   65|
+|HanMeiMei|  97|     98|   89|
+|     Lucy|  66|     55|   70|
++---------+----+-------+-----+
+
+array类型
++---------+------------+
+|     name|       score|
++---------+------------+
+|    LiLei|[89, 76, 65]|
+|HanMeiMei|[97, 98, 89]|
+|     Lucy|[66, 55, 70]|
++---------+------------+
+
++---------+----+
+|     name|math|
++---------+----+
+|    LiLei|  89|
+|HanMeiMei|  97|
+|     Lucy|  66|
++---------+----+
+
+struct类型
++---------+--------------------+
+|     name|               score|
++---------+--------------------+
+|    LiLei|[math,89,physics,...|
+|HanMeiMei|[math,97,physics,...|
+|     Lucy|[math,66,physics,...|
++---------+--------------------+
+
++---------+-------+
+|     name|physics|
++---------+-------+
+|    LiLei|     76|
+|HanMeiMei|     98|
+|     Lucy|     55|
++---------+-------+
+
+map类型
++---------+--------------------+
+|     name|               score|
++---------+--------------------+
+|    LiLei|Map(math -> 89, p...|
+|HanMeiMei|Map(math -> 97, p...|
+|     Lucy|Map(math -> 66, p...|
++---------+--------------------+
+
++---------+----+
+|     name|math|
++---------+----+
+|    LiLei|  89|
+|HanMeiMei|  97|
+|     Lucy|  66|
++---------+----+
+
+```
+
 
 ### 五，DataFrame的SQL交互
-
 
 将DataFrame注册为临时表视图或者全局表视图后，可以使用sql语句对DataFrame进行交互。
 
