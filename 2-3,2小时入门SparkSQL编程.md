@@ -1522,6 +1522,87 @@ map类型
 
 ```
 
+```python
+
+#json构造(to_json)和解析(get_json_object)
+
+#构造学生数据
+dfstudents = spark.createDataFrame([("LiLei","Math",70),("LiLei","English",87)
+  ,("HanMeimei","Math",80),("HanMeimei","English",90)]).toDF("name","course","score")
+print("dfstudents:")
+dfstudents.show() 
+
+#构造named_struct类型
+dfnamed_struct = dfstudents.selectExpr("name","named_struct('course',course,'score',score) as scores")
+print("dfnamed_struct:")
+dfnamed_struct.show() 
+
+
+#构造array(named_struct)类型
+dfagg = dfnamed_struct.groupby("name").agg(F.expr("collect_list(scores) as arr_scores"))
+print("dfagg:")
+dfagg.show() 
+
+#转换成json 
+dfjson = dfagg.selectExpr("name","to_json(arr_scores) as json_scores")
+print("dfjson:")
+dfjson.show() 
+
+#使用get_json_object解析json 
+dfscores = dfjson.selectExpr("name",
+    "get_json_object(json_scores,'$[0].score') as Math",
+    "get_json_object(json_scores,'$[1].score') as English",)
+print("dfscores:")
+dfscores.show() 
+
+```
+
+```
+dfstudents:
++---------+-------+-----+
+|     name| course|score|
++---------+-------+-----+
+|    LiLei|   Math|   70|
+|    LiLei|English|   87|
+|HanMeimei|   Math|   80|
+|HanMeimei|English|   90|
++---------+-------+-----+
+
+dfnamed_struct:
++---------+------------+
+|     name|      scores|
++---------+------------+
+|    LiLei|   [Math,70]|
+|    LiLei|[English,87]|
+|HanMeimei|   [Math,80]|
+|HanMeimei|[English,90]|
++---------+------------+
+
+dfagg:
++---------+--------------------+
+|     name|          arr_scores|
++---------+--------------------+
+|    LiLei|[[Math,70], [Engl...|
+|HanMeimei|[[Math,80], [Engl...|
++---------+--------------------+
+
+dfjson:
++---------+--------------------+
+|     name|         json_scores|
++---------+--------------------+
+|    LiLei|[{"course":"Math"...|
+|HanMeimei|[{"course":"Math"...|
++---------+--------------------+
+
+dfscores:
++---------+----+-------+
+|     name|Math|English|
++---------+----+-------+
+|    LiLei|  70|     87|
+|HanMeimei|  80|     90|
++---------+----+-------+
+```
+
 
 ### 五，DataFrame的SQL交互
 
