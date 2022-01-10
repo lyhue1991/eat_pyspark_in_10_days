@@ -1774,7 +1774,39 @@ dfdata.show()
 ```
 
 ```python
+#删除分区
+query = """
+ALTER TABLE `students`
+DROP IF EXISTS
+PARTITION(class='class3') 
+""".replace("\n"," ")
+spark.sql(query)
 
+```
+
+```python
+#查看剩下数据
+dfremain = spark.sql("select * from students")
+dfremain.show() 
+```
+
+
+```
++---------+---+------+------+
+|     name|age| class|gender|
++---------+---+------+------+
+|    Jerry| 19|class4|  male|
+|    David| 18|class4|  male|
+|    LiLei| 18|class1|  male|
+|   DaChui| 19|class2|  male|
+|     Lily| 17|class1|female|
+|HanMeimei| 17|class2|female|
+|      Ann| 17|class4|female|
+|      Amy| 17|class4|female|
++---------+---+------+------+
+```
+
+```python
 ```
 
 **如果本书对你有所帮助，想鼓励一下作者，记得给本项目加一颗星星star⭐️，并分享给你的朋友们喔😊!** 
